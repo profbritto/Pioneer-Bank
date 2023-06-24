@@ -19,16 +19,22 @@ const btnWithdraw=document.getElementById('btnWithdraw');
 
 
 btnWithdraw.addEventListener('click',function(){
+    var totalBal=parseFloat(document.getElementById("totalBal").innerText);
+    if(totalBal>0){
     var totalWithdraw=parseFloat(document.getElementById("totalWithdraw").innerText);
     var WithdrawAmmount=parseFloat(document.getElementById("WithdrawAmmount").value);
     totalWithdraw=totalWithdraw+WithdrawAmmount;
     console.log(totalWithdraw);
     document.getElementById("totalWithdraw").innerHTML = totalWithdraw ;
 
-    var totalBal=parseFloat(document.getElementById("totalBal").innerText);
     totalBal=totalBal-WithdrawAmmount;
     console.log(totalBal);
-    document.getElementById("totalBal").innerText=totalBal;   
+    document.getElementById("totalBal").innerText=totalBal; 
+    }else{
+        document.getElementById("totalBal").innerText=0;
+        alert("You have no balance to withdraw");
+        
+    }  
  });
 
 
