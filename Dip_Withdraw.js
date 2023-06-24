@@ -15,10 +15,13 @@ btnDeposit.addEventListener('click',function(){
     totalBal=totalBal+DepositAmmount;
     console.log(totalBal);
     document.getElementById("totalBal").innerText=totalBal; 
+
     }else{
         alert("Enter a valid amount");
 
     }  
+    document.getElementById("DepositAmmount").value='';
+
  });
 
 
@@ -53,6 +56,7 @@ btnWithdraw.addEventListener('click',function(){
         alert("You have no balance to withdraw");
         
     }  
+    document.getElementById("WithdrawAmmount").value='';
  });
 
 
